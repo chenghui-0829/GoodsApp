@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f5f5f5"
+    tools:context="com.ch.goods.app.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:orientation="vertical">
+        <TextView
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:text="商品列表" />
+        <EditText
+            android:id="@+id/index_page_edit"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:background="@drawable/edit_background"
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="搜索"
+            android:inputType="text" />
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/index_page_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.scwang.smartrefresh.header.MaterialHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <GridView
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:numColumns="2"
+                android:listSelector="#00000000"
+                android:verticalSpacing="12dp"
+                android:horizontalSpacing="12dp"
+                android:id="@+id/index_page_grid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</RelativeLayout>
