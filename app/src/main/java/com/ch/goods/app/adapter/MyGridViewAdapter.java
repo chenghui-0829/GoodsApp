@@ -53,13 +53,11 @@ public class MyGridViewAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-//        Glide.with(mContext).load(goodsList.get(position).)
-
+        Glide.with(mContext).load(goodsList.get(position).getImageUrl()).into(holder.imageView);
         holder.priceText.setText("￥" + goodsList.get(position).getPrice());
         holder.titleText.setText(goodsList.get(position).getTitle());
         return convertView;
     }
-
 
     class ViewHolder {
         TextView priceText, titleText;

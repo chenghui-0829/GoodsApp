@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Context context = MainActivity.this;
     private GridView goodsGridView;
     private MyGridViewAdapter mAdapter;
-    private List<GoodInfo> goodsList = new ArrayList<>();
+    private List<GoodInfo> goodsList;
     private SmartRefreshLayout refreshLayout;
     private int page = 1, pageSize = 20;
     private EditText editText;
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 context.startActivity(intent);
             }
         });
+        goodsList = new ArrayList<>();
         _getData(0);
 
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
@@ -125,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     model.setId(object.getString("Id"));
                     model.setPrice(object.getDouble("Price"));
                     model.setTitle(object.getString("Title"));
+                    model.setImageUrl("http://121.199.56.252" + object.getString("FilesPath"));
                     tempList.add(model);
                 }
                 goodsList.addAll(tempList);

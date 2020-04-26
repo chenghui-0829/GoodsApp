@@ -7,6 +7,15 @@ public class GoodInfo {
     double price;
     String title;
     String id;
+    String imageUrl;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public double getPrice() {
         return price;
